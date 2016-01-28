@@ -12,7 +12,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
         switch (authenticatorObject.getErrorLevel()) {
 
-            case 0: Intent I = new Intent(this,WelcomeScreen.class); //proceed to user screen
+            case 0: Intent I = new Intent(this,WelcomeActivity.class); //proceed to user screen
                     startActivity(I);
                     break;
 
