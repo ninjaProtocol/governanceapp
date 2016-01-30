@@ -20,7 +20,8 @@ public class AuthenticateUser {
         //calculate checksum and transmit to server for auth
         //String passwordHash = DigestUtils.sha1Hex(plainTextPassword);
 
-        //send checksum to server for validation and set ERRORLEVEL
+        //send checksum to server for validation and set ERRORLEVEL (default 3)
+        ERRORLEVEL = 3; //Exception
         if (plainTextEmail.equalsIgnoreCase(mock_userEmail)) {
             if (mock_userPassword.equalsIgnoreCase(plainTextPassword)) {
                 ERRORLEVEL = 0; //successful match
@@ -28,7 +29,7 @@ public class AuthenticateUser {
             else
                 ERRORLEVEL = 1; //password doesn't match
         } else
-            ERRORLEVEL = 3; //email doesn't match
+            ERRORLEVEL = 2; //email doesn't match
     }
 
     public short getErrorLevel(){

@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/loginActivity_checkBox_saveData"
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBox_remember"
         android:layout_below="@+id/editText_password"
         android:layout_alignRight="@+id/editText_password"
         android:layout_alignEnd="@+id/editText_password" />

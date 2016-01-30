@@ -6,6 +6,8 @@
     <string name="loginActivity_checkBox_saveData">Remember Me</string>
     <string name="prefFile_login">com.example.ojas.governanceapp.loginPrefFile</string>
     <string name="prefFile_key_saveData">saveData</string>
+    <string name="prefFile_key_savedUser">savedUser</string>
+    <string name="prefFile_key_savedPassword">savedPassword</string>
     <string name="prefFile_key_currentUser">currentUser</string>
     <string name="prefFile_key_currentPassword">currentPassword</string>
     <string name="prefFile_key_isUserLoggedIn">isUserLoggedIn</string>
