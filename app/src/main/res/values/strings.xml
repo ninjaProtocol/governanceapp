@@ -11,4 +11,6 @@
     <string name="prefFile_key_currentUser">currentUser</string>
     <string name="prefFile_key_currentPassword">currentPassword</string>
     <string name="prefFile_key_isUserLoggedIn">isUserLoggedIn</string>
+    <string name="title_activity_view_plot_avtivity">ViewPlotAvtivity</string>
+    <string name="title_activity_view_plot">ViewPlotActivity</string>
 </resources>

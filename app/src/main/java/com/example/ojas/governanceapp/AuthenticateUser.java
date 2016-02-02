@@ -6,7 +6,7 @@ package com.example.ojas.governanceapp;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
-public class AuthenticateUser {
+class AuthenticateUser {
 
     private short ERRORLEVEL;
 

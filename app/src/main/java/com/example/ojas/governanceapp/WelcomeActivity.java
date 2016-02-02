@@ -52,4 +52,13 @@ public class WelcomeActivity extends AppCompatActivity {
         finish();
     }
 
+    public void onClickViewPlots (View view) {
+        Intent I = new Intent(this,ViewPlotActivity.class);
+        startActivity(I);
+        finish();
+    }
+
+    public void onClickAddPlot (View view) {
+
+    }
 }

@@ -12,21 +12,30 @@
     tools:context=".WelcomeActivity"
     tools:showIn="@layout/activity_welcome">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Hello! Cheeki Breeki!"
-        android:id="@+id/id_text_userPageTitle"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:text="Sign Out"
-        android:id="@+id/id_button_logout"
+        android:id="@+id/button_logout"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:onClick="onClickLogoutMethod"/>
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="View Plots"
+        android:id="@+id/button_ViewPlots"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClickViewPlots"/>
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Add New Plot"
+        android:id="@+id/button_AddPlot"
+        android:layout_below="@+id/button_ViewPlots"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClickAddPlot"/>
 </RelativeLayout>
