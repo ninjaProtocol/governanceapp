@@ -4,8 +4,6 @@ package com.example.ojas.governanceapp;
  * Created by Ojas on 22-01-2016.
  */
 
-import org.apache.commons.codec.digest.DigestUtils;
-
 class AuthenticateUser {
 
     private short ERRORLEVEL;

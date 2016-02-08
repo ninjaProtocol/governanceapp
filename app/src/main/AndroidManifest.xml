@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashActivity"
+            android:name="com.com.example.ojas.governanceapp.ojas.governanceapp.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,15 +18,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name="com.com.example.ojas.governanceapp.ojas.governanceapp.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".WelcomeActivity"
+            android:name="com.com.example.ojas.governanceapp.ojas.governanceapp.WelcomeActivity"
             android:label="@string/title_activity_welcome"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ViewPlotActivity"
+            android:name="com.com.example.ojas.governanceapp.ojas.governanceapp.ViewPlotActivity"
             android:label="@string/title_activity_view_plot"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
