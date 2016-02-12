@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
+import com.example.testdata.TestData;
+
 public class WelcomeActivity extends AppCompatActivity {
 
     @Override
@@ -17,7 +19,7 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         Log.d("TAG_WELCOME_MESSAGE", "WelcomeActivity onCreate starts now");
-
+        loadTestData();
         setContentView(R.layout.activity_welcome);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -60,5 +62,10 @@ public class WelcomeActivity extends AppCompatActivity {
 
     public void onClickAddPlot (View view) {
 
+    }
+
+    private void loadTestData(){
+        TestData td = new TestData();
+        td.createData(this);
     }
 }

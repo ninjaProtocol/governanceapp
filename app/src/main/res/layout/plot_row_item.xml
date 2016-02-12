@@ -9,7 +9,7 @@
         android:layout_height="80dp"
         android:id="@+id/imageView_plotImage"
         android:layout_margin="5dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/default_square" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -28,16 +28,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Coordinates"
-            android:id="@+id/text_plotCoords"
+            android:text="Latitude"
+            android:id="@+id/text_plotCoords_lat"
             android:layout_margin="5dp" />
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Plot Name"
-        android:id="@+id/text_plotName"
-        android:layout_margin="5dp" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Plot Name"
+            android:id="@+id/text_plotName"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Longitude"
+            android:id="@+id/text_plotCoords_long"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+
 </LinearLayout>

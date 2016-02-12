@@ -9,8 +9,8 @@ import de.greenrobot.daogenerator.ToMany;
 
 public class GeneratorDAO {
 
-    public static void string (String args[]) throws Exception {
-        Schema schema = new Schema(1,"com.com.example.ojas.governanceapp.ojas.governanceapp.model");
+    public static void main (String args[]) throws Exception {
+        Schema schema = new Schema(1,"com.com.example.ojas.governanceapp.ojas.governanceapp.example.example.model");
 
         Entity plot = schema.addEntity("Plot");
         plot.addIdProperty();
@@ -24,8 +24,11 @@ public class GeneratorDAO {
         plot.addFloatProperty("root_to_shoot_ratio");
         plot.addStringProperty("mapped_dimensions"); //TODO confirm datatype
         plot.addStringProperty("reported_dimensions"); //TODO confirm datatype
-        plot.addByteProperty("reported_shape"); //TODO confirm datatype
-        plot.addByteProperty("mapped_shape"); //TODO confirm datatype
+        plot.addStringProperty("center_point_type");
+        plot.addDoubleProperty("cp_coord_latitude");
+        plot.addDoubleProperty("cp_coord_longitude");
+        plot.addShortProperty("reported_shape"); //TODO confirm datatype
+        plot.addShortProperty("mapped_shape"); //TODO confirm datatype
         plot.addBooleanProperty("has_soil_data");
         plot.addBooleanProperty("has_biomass_data");
         plot.addBooleanProperty("has_deadwood_data");
@@ -37,12 +40,10 @@ public class GeneratorDAO {
         plot.addIntProperty("tree_count");
 
         //image handling
-
+        plot.addStringProperty("fileName");
         plot.addStringProperty("image_file_path"); // local only
-
-        Entity center_point = schema.addEntity("center_point");
-        center_point.addStringProperty("type");
-        //TODO add property for coordinates
+        plot.addStringProperty("photo_direction");
+        plot.addDateProperty("photo_date");
 
         Entity aeq = schema.addEntity("aeq");
         aeq.addIdProperty();
@@ -51,5 +52,11 @@ public class GeneratorDAO {
         aeq.addStringProperty("species");
         aeq.addBooleanProperty("volumetric");
 
+        Property plotID = aeq.addLongProperty("plotID").getProperty();
+        aeq.addToOne(plot, plotID);
+        ToMany plotToAeq = plot.addToMany(aeq, plotID);
+        plotToAeq.setName("aeq");
+
+        new DaoGenerator().generateAll(schema, "../app/src/main/java");
     }
 }

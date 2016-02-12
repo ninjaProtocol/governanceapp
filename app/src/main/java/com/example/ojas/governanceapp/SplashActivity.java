@@ -76,6 +76,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
             }
         } else{
+
             Log.d("TAG_SPLASH_MESSAGE","PrefFile likely doesn't exist");
 
             //init pref file
@@ -86,11 +87,15 @@ public class SplashActivity extends AppCompatActivity {
             editor.putString(getString(R.string.prefFile_key_currentPassword), "");
             editor.putString(getString(R.string.prefFile_key_savedUser), "");
             editor.putString(getString(R.string.prefFile_key_savedPassword), "");
-            editor.putBoolean(getString(R.string.prefFile_key_isUserLoggedIn),false);
+            editor.putBoolean(getString(R.string.prefFile_key_isUserLoggedIn), false);
             if (editor.commit())
                 Log.d("TAG_FILE_MESSAGE","Successfully wrote to pref file");
             else
                 Log.d("TAG_FILE_ERROR","Could not commit to pref file");
+
+            Intent toLogin = new Intent(SplashActivity.this, LoginActivity.class);
+            startActivity(toLogin);
+            finish();
         }
     }
 }

@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class ViewPlotAdapter extends CursorAdapter {
 
     public ViewPlotAdapter(Context context, Cursor cursor, int flags) {
+
         super(context, cursor, 0);
     }
 
@@ -28,14 +29,20 @@ public class ViewPlotAdapter extends CursorAdapter {
         ImageView ivPlotImage = (ImageView) view.findViewById(R.id.imageView_plotImage);
         TextView tvPlotID = (TextView) view.findViewById(R.id.text_plotID);
         TextView tvPlotName = (TextView) view.findViewById(R.id.text_plotName);
-        TextView tvPlotCoords = (TextView) view.findViewById(R.id.text_plotCoords);
+        TextView tvPlotCoordsLat = (TextView) view.findViewById(R.id.text_plotCoords_lat);
+        TextView tvPlotCoordsLong = (TextView) view.findViewById(R.id.text_plotCoords_long);
 
-        String pid = cursor.getString(cursor.getColumnIndexOrThrow("id"));
-        String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
-        String coords = cursor.getString(cursor.getColumnIndexOrThrow("Coordinates")); //TODO figure out how to handle an array
+        Long pid = cursor.getLong(cursor.getColumnIndexOrThrow("_id"));
+        String name = cursor.getString(cursor.getColumnIndexOrThrow("NAME"));
+        double lat = cursor.getDouble(cursor.getColumnIndexOrThrow("CP_COORD_LATITUDE"));
+        double lon = cursor.getDouble(cursor.getColumnIndexOrThrow("CP_COORD_LONGITUDE"));
+        cursor.moveToNext();
+        //TODO stop the first item from repeating
 
-        tvPlotID.setText(pid);
+        tvPlotID.setText(String.valueOf(pid));
         tvPlotName.setText(name);
-        tvPlotCoords.setText(coords);
+        tvPlotCoordsLat.setText(String.valueOf(lat));
+        tvPlotCoordsLong.setText(String.valueOf(lon));
+
     }
 }
